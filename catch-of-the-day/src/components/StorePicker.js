@@ -1,5 +1,6 @@
 import React from "react";
 import { getFunName } from "../helpers";
+
 class StorePicker extends React.Component {
   myInput = React.createRef();
 
@@ -8,9 +9,10 @@ class StorePicker extends React.Component {
     event.preventDefault();
 
     // 2. get text from that input
-    console.log(this.myInput);
+    const storeName = this.myInput.current.value;
 
     // 3. change the page to /store/whatever-they-entered
+    this.props.history.push(`/store/${storeName}`);
 
     console.log("Going to store");
   };
